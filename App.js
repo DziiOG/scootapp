@@ -1,36 +1,36 @@
-import * as React from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow
+ */
+import 'react-native-gesture-handler';
+import React from 'react';
+import {StyleSheet, View} from 'react-native';
+import Root from './src/main';
+import axios from 'axios';
 
-const instructions = Platform.select({
-  ios: `Press Cmd+R to reload,\nCmd+D or shake for dev menu`,
-  android: `Double tap R on your keyboard to reload,\nShake or press menu button for dev menu`,
-});
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.welcome}>Welcome to React Native!</Text>
-      <Text style={styles.instructions}>To get started, edit App.js</Text>
-      <Text style={styles.instructions}>{instructions}</Text>
-    </View>
+    <>
+      <View style={styles.container}>
+        <Root {...this.props} />
+      </View>
+    </>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+
+ 
 });
+
+export default App;
+
+
+axios.defaults.baseURL = 'https://us-central1-halo-84fb8.cloudfunctions.net/api';
